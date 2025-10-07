@@ -35,8 +35,6 @@ export class AllExceptionsFilter implements ExceptionFilter {
     const errorResponse = {
       success: false,
       timestamp: new Date().toISOString(),
-      path: request.url,
-      method: request.method,
       status,
       message,
     };

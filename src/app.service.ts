@@ -7,7 +7,7 @@ export class AppService {
   constructor(@Inject('KNEX_CONNECTION') private readonly db: Knex){}
 
   getHello(): string {
-    throw NotFoundException
+    throw new NotFoundException('Recurso no encontrado');
     return 'Hello World!';
   }
 
