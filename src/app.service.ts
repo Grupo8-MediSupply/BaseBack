@@ -1,11 +1,13 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { Knex } from 'knex';
+import { NotFoundError } from 'rxjs';
 
 @Injectable()
 export class AppService {
   constructor(@Inject('KNEX_CONNECTION') private readonly db: Knex){}
 
   getHello(): string {
+    throw NotFoundException
     return 'Hello World!';
   }
 

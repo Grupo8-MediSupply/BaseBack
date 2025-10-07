@@ -3,12 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DbModule } from './db/db.module';
 import { ConfigModule } from '@nestjs/config';
+import { SharedModule } from './shared/shared.module';
 
 @Module({
   imports: [DbModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    SharedModule,
   ],
   controllers: [AppController],
   providers: [AppService],
